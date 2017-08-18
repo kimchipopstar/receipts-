@@ -14,6 +14,9 @@
 		4D03C0511F46238600D336C9 /* receipts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4D03C04F1F46238600D336C9 /* receipts.xcdatamodeld */; };
 		4D03C0531F46238600D336C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D03C0521F46238600D336C9 /* Assets.xcassets */; };
 		4D03C0561F46238600D336C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D03C0541F46238600D336C9 /* LaunchScreen.storyboard */; };
+		4D03C0621F4632E600D336C9 /* CreatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D03C0611F4632E600D336C9 /* CreatingViewController.m */; };
+		4D03C0651F46537A00D336C9 /* TagTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D03C0641F46537A00D336C9 /* TagTableViewCell.m */; };
+		4D03C0681F46832200D336C9 /* ReceiptTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D03C0671F46832200D336C9 /* ReceiptTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,13 @@
 		4D03C0521F46238600D336C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D03C0551F46238600D336C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D03C0571F46238600D336C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D03C0601F4632E600D336C9 /* CreatingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreatingViewController.h; path = ../CreatingViewController.h; sourceTree = "<group>"; };
+		4D03C0611F4632E600D336C9 /* CreatingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreatingViewController.m; path = ../CreatingViewController.m; sourceTree = "<group>"; };
+		4D03C0631F46537A00D336C9 /* TagTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagTableViewCell.h; sourceTree = "<group>"; };
+		4D03C0641F46537A00D336C9 /* TagTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagTableViewCell.m; sourceTree = "<group>"; };
+		4D03C0661F46832200D336C9 /* ReceiptTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceiptTableViewCell.h; sourceTree = "<group>"; };
+		4D03C0671F46832200D336C9 /* ReceiptTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceiptTableViewCell.m; sourceTree = "<group>"; };
+		4D03C0691F468E1400D336C9 /* receipts 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "receipts 2.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,11 +72,15 @@
 			children = (
 				4D03C0461F46238600D336C9 /* AppDelegate.h */,
 				4D03C0471F46238600D336C9 /* AppDelegate.m */,
+				4D03C0601F4632E600D336C9 /* CreatingViewController.h */,
+				4D03C0611F4632E600D336C9 /* CreatingViewController.m */,
 				4D03C0491F46238600D336C9 /* ViewController.h */,
 				4D03C04A1F46238600D336C9 /* ViewController.m */,
 				4D03C04C1F46238600D336C9 /* Main.storyboard */,
-				4D03C0521F46238600D336C9 /* Assets.xcassets */,
-				4D03C0541F46238600D336C9 /* LaunchScreen.storyboard */,
+				4D03C0661F46832200D336C9 /* ReceiptTableViewCell.h */,
+				4D03C0671F46832200D336C9 /* ReceiptTableViewCell.m */,
+				4D03C0631F46537A00D336C9 /* TagTableViewCell.h */,
+				4D03C0641F46537A00D336C9 /* TagTableViewCell.m */,
 				4D03C0571F46238600D336C9 /* Info.plist */,
 				4D03C04F1F46238600D336C9 /* receipts.xcdatamodeld */,
 				4D03C0431F46238600D336C9 /* Supporting Files */,
@@ -77,6 +91,8 @@
 		4D03C0431F46238600D336C9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4D03C0521F46238600D336C9 /* Assets.xcassets */,
+				4D03C0541F46238600D336C9 /* LaunchScreen.storyboard */,
 				4D03C0441F46238600D336C9 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -155,8 +171,11 @@
 			files = (
 				4D03C0511F46238600D336C9 /* receipts.xcdatamodeld in Sources */,
 				4D03C04B1F46238600D336C9 /* ViewController.m in Sources */,
+				4D03C0651F46537A00D336C9 /* TagTableViewCell.m in Sources */,
 				4D03C0481F46238600D336C9 /* AppDelegate.m in Sources */,
+				4D03C0621F4632E600D336C9 /* CreatingViewController.m in Sources */,
 				4D03C0451F46238600D336C9 /* main.m in Sources */,
+				4D03C0681F46832200D336C9 /* ReceiptTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +339,7 @@
 		4D03C04F1F46238600D336C9 /* receipts.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				4D03C0691F468E1400D336C9 /* receipts 2.xcdatamodel */,
 				4D03C0501F46238600D336C9 /* receipts.xcdatamodel */,
 			);
 			currentVersion = 4D03C0501F46238600D336C9 /* receipts.xcdatamodel */;

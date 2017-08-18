@@ -17,6 +17,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"firstRun"] == nil)
+    {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstRun"];
+    }
+    else
+    {
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"firstRun"];
+    }
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
     return YES;
 }
 

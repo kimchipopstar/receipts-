@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CreatingViewController.h
 //  receipts
 //
 //  Created by Jaewon Kim on 2017-08-17.
@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
-#import "AppDelegate.h"
+#import "receipts+CoreDataModel.h"
 
-@interface ViewController : UIViewController <NSFetchedResultsControllerDelegate>
+@interface CreatingViewController : UIViewController
 
 
 @end
-

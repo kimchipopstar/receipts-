@@ -7,8 +7,20 @@
 //
 
 #import "ViewController.h"
+#import "receipts+CoreDataModel.h"
+#import "Tag+CoreDataClass.h"
+#import "ReceiptTableViewCell.h"
 
-@interface ViewController ()
+@interface ViewController () <UITableViewDataSource,UITableViewDelegate>
+
+@property NSArray<Receipt*> *receipts;
+@property NSArray<Tag*> *tags;
+@property NSPersistentContainer *persistentContainer;
+@property AppDelegate *appDelegate;
+
+@property NSMutableArray<NSMutableArray<Receipt*>*> *organizedReceipts;
+
+
 
 @end
 
@@ -16,14 +28,65 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    self.appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    self.persistentContainer = self.appDelegate.persistentContainer;
+    
+    
+    
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewWillAppear:(BOOL)animated {
+    NSError *error = nil;
+    
+    NSFetchRequest<Receipt*> *fetchReceiptsReqeust = [Receipt fetchRequest];
+    self.receipts = [self.persistentContainer.viewContext executeFetchRequest:fetchReceiptsReqeust error:&error];
+    
+    NSFetchRequest<Tag*> *fetchTagsRequest = [Tag fetchRequest];
+    self.tags = [self.persistentContainer.viewContext executeFetchRequest:fetchTagsRequest error:&error];
+    
+    self.organizedReceipts = [[NSMutableArray alloc] init];
+    
+    for (int i = 0; i < self.tags.count; i++) {
+        NSMutableArray *array = [NSMutableArray new];
+        Tag* tag = self.tags[i];
+        for (Receipt* reciept in tag.reciepts) {
+            [array addObject:reciept];
+        }
+        [self.organizedReceipts addObject:array];
+    }
 }
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+
+    return self.tags.count;
+
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+    return self.organizedReceipts[section].count;
+    
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    ReceiptTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"rtvc" forIndexPath:indexPath];
+    
+    Receipt *receipt = self.organizedReceipts[indexPath.section][indexPath.row];
+    
+    [cell configureWithReceipts:receipt];
+    
+    return cell;
+    
+}
+
+//-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+//    
+//    
+//    
+//}
+
 
 
 @end
